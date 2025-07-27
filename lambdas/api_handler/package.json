@@ -1,0 +1,9 @@
+{
+  "name": "api-handler",
+  "version": "1.0.0",
+  "description": "API Handler Lambda for order processing",
+  "main": "index.py",
+  "dependencies": {
+    "boto3": "^1.26.0"
+  }
+}
