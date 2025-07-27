@@ -79,5 +79,5 @@ variable "sqs_max_receive_count" {
 variable "deploy_cicd_pipeline" {
   description = "Whether to deploy the CI/CD pipeline"
   type        = bool
-  default     = false
+  default     = true
 }

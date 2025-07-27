@@ -9,7 +9,7 @@ API_URL=${1:-""}
 
 if [ -z "$API_URL" ]; then
     echo "Usage: $0 <api_gateway_url>"
-    echo "Example: $0 https://abc123.execute-api.us-east-1.amazonaws.com/dev"
+    echo "Example: $0 https://abc123.execute-api.ap-south-1.amazonaws.com/dev"
     exit 1
 fi
 

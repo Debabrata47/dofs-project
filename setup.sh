@@ -56,7 +56,7 @@ if command -v aws &> /dev/null; then
         AWS_REGION=$(aws configure get region)
         echo "   ✅ AWS Credentials configured"
         echo "      Account: $AWS_ACCOUNT"
-        echo "      Region: ${AWS_REGION:-us-east-1 (default)}"
+        echo "      Region: ${AWS_REGION:-ap-south-1 (default)}"
     else
         echo "   ⚠️  AWS credentials not configured"
     fi
