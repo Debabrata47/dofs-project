@@ -37,7 +37,7 @@ variable "github_branch" {
 variable "github_token_secret_name" {
   description = "AWS Secrets Manager secret name containing GitHub token"
   type        = string
-  default     = "github-token"
+  default     = "github_token"
 }
 
 variable "enable_dlq_alerting" {
