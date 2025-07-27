@@ -14,7 +14,7 @@ resource "aws_sns_topic" "alerts" {
 
 # SNS Topic Subscription
 resource "aws_sns_topic_subscription" "email_alerts" {
-  topic_arn = aws_sns_topic.alerts.arn
+  topic_arn = "arn:aws:sns:ap-south-1:835701951685:dofs-alerts-dev:07bb3f60-ba7c-4222-862f-14b37b963807"
   protocol  = "email"
   endpoint  = var.notification_email
 }
