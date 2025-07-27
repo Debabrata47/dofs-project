@@ -13,11 +13,11 @@ resource "aws_sns_topic" "alerts" {
 }
 
 # SNS Topic Subscription
-resource "aws_sns_topic_subscription" "email_alerts" {
-  topic_arn = "arn:aws:sns:ap-south-1:835701951685:dofs-alerts-dev"
-  protocol  = "email"
-  endpoint  = var.notification_email
-}
+# resource "aws_sns_topic_subscription" "email_alerts" {
+#   topic_arn = "arn:aws:sns:ap-south-1:835701951685:dofs-alerts-dev"
+#   protocol  = "email"
+#   endpoint  = var.notification_email
+# }
 
 # CloudWatch Alarm for DLQ Message Count
 resource "aws_cloudwatch_metric_alarm" "dlq_message_count" {
