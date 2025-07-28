@@ -30,7 +30,7 @@ phases:
       - |
         if [ "$TF_COMMAND" = "plan" ]; then
           echo "Running terraform plan..."
-          terraform plan \
+          terraform plan -lock=false \
             -out=tfplan \
             -var="aws_region=$AWS_DEFAULT_REGION" \
             -var="environment=$TF_VAR_environment" \
