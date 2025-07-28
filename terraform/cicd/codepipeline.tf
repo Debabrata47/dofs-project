@@ -29,8 +29,8 @@ resource "aws_codepipeline" "terraform_pipeline" {
       output_artifacts = ["source_output"]
 
       configuration = {
-        Owner      = split("/", replace(var.github_repo_url, "https://github.com/", ""))[0]
-        Repo       = split("/", replace(var.github_repo_url, "https://github.com/", ""))[1]
+        Owner      = split("/", replace(var.github_repo_url, "https://github.com/Debabrata47/dofs-project", ""))[0]
+        Repo       = split("/", replace(var.github_repo_url, "https://github.com/Debabrata47/dofs-project", ""))[1]
         Branch     = var.github_branch
         OAuthToken = jsondecode(data.aws_secretsmanager_secret_version.github_token.secret_string)["token"]
       }
