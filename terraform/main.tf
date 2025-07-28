@@ -164,6 +164,6 @@ module "cicd" {
   github_repo_url           = var.github_repo_url
   github_branch             = var.github_branch
   github_token_secret_name  = var.github_token_secret_name
-  
+  codestar_connection_arn = var.codestar_connection_arn
   tags = local.common_tags
 }

@@ -81,3 +81,8 @@ variable "deploy_cicd_pipeline" {
   type        = bool
   default     = true
 }
+variable "codestar_connection_arn" {
+  description = "Whether to deploy the CI/CD pipeline"
+  type        = string
+  default     = "arn:aws:codeconnections:ap-south-1:835701951685:connection/49924308-ca75-4499-bd2b-0d870e47d365"
+}

@@ -29,3 +29,9 @@ variable "github_token_secret_name" {
   description = "AWS Secrets Manager secret name containing GitHub token"
   type        = string
 }
+
+
+variable "codestar_connection_arn" {
+  description = "ARN of the AWS CodeStar connection for GitHub"
+  type        = string
+}
