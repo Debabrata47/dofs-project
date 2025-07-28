@@ -72,7 +72,8 @@ resource "aws_iam_policy" "lambda_policy" {
         Action = [
           "states:StartExecution",
           "states:DescribeExecution",
-          "states:StopExecution"
+          "states:StopExecution",
+          "states:ListStateMachines"
         ]
         Resource = var.step_function_arn != "" ? var.step_function_arn : "*"
       }
