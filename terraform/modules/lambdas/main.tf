@@ -127,7 +127,7 @@ resource "aws_lambda_function" "api_handler" {
     variables = {
       ENVIRONMENT       = var.environment
       PROJECT_NAME      = var.project_name
-
+      STEP_FUNCTION_NAME  = "dofs-order-processing-dev"
     }
   }
 
