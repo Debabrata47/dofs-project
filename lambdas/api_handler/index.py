@@ -17,7 +17,7 @@ def get_step_function_arn() -> str:
     sfn = boto3.client("stepfunctions")
     env = os.environ["ENVIRONMENT"]
     project = os.environ["PROJECT_NAME"]
-    target_name = f"{project}-{env}-stepfunction"
+    target_name = os.environ.get("STEP_FUNCTION_NAME", f"{project}-{env}")
 
     response = sfn.list_state_machines()
 
