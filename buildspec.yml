@@ -5,8 +5,11 @@ phases:
     runtime-versions:
       python: 3.9
     commands:
+    commands:
+      - echo "Cleaning up any existing 'terraform' file or directory..."
+      - rm -rf terraform terraform_1.5.7_linux_amd64.zip
       - curl -LO https://releases.hashicorp.com/terraform/1.5.7/terraform_1.5.7_linux_amd64.zip
-      - unzip terraform_1.5.7_linux_amd64.zip || { echo "Unzip failed"; exit 1; }
+      - unzip terraform_1.5.7_linux_amd64.zip
       - mv terraform /usr/local/bin/
       - terraform version
 
