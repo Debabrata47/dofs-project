@@ -32,11 +32,18 @@ resource "aws_iam_policy" "codepipeline_policy" {
       {
         Effect = "Allow"
         Action = [
+          "codestar-connections:UseConnection"
+        ]
+        Resource = "arn:aws:codeconnections:ap-south-1:835701951685:connection/49924308-ca75-4499-bd2b-0d870e47d365"
+      },
+      {
+        Effect = "Allow"
+        Action = [
           "s3:GetBucketVersioning",
           "s3:GetObject",
           "s3:GetObjectVersion",
           "s3:PutObject",
-          "codestar-connections:UseConnection"
+          "s3:ListBucket"
         ]
         Resource = [
           aws_s3_bucket.pipeline_artifacts.arn,
