@@ -1,4 +1,4 @@
-# DOFS (Distributed Order Fulfillment System)
+# DOFS (Distributed Order Fulfillment System):
 
 A production-grade event-driven serverless architecture using AWS services and Terraform for automated order processing with CI/CD pipeline.
 
