@@ -35,7 +35,8 @@ resource "aws_iam_policy" "codepipeline_policy" {
           "s3:GetBucketVersioning",
           "s3:GetObject",
           "s3:GetObjectVersion",
-          "s3:PutObject"
+          "s3:PutObject",
+          "codestar-connections:UseConnection"
         ]
         Resource = [
           aws_s3_bucket.pipeline_artifacts.arn,
@@ -108,7 +109,8 @@ resource "aws_iam_policy" "codebuild_policy" {
         Action = [
           "s3:GetObject",
           "s3:GetObjectVersion",
-          "s3:PutObject"
+          "s3:PutObject",
+          "s3:ListBucket"
         ]
         Resource = [
           aws_s3_bucket.pipeline_artifacts.arn,

@@ -82,7 +82,7 @@ cd dofs-project
 ### 2. Configure Terraform Backend (Optional but Recommended)
 ```bash
 # Create S3 bucket for Terraform state
-aws s3 mb s3://your-terraform-state-bucket --region us-east-1
+aws s3 mb s3://your-terraform-state-bucket --region ap-south-1
 
 # Create DynamoDB table for state locking
 aws dynamodb create-table \
@@ -143,7 +143,7 @@ curl -X POST $API_URL/order \
 ### Core Variables
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `aws_region` | AWS region for deployment | `us-east-1` |
+| `aws_region` | AWS region for deployment | `ap-south-1` |
 | `environment` | Environment name (dev/staging/prod) | `dev` |
 | `project_name` | Project name prefix | `dofs` |
 | `notification_email` | Email for alerts | Required |
@@ -173,7 +173,7 @@ curl -X POST $API_URL/order \
 
 2. Set up repository variables:
    ```
-   AWS_REGION=us-east-1
+   AWS_REGION=ap-south-1
    ENVIRONMENT=dev
    PROJECT_NAME=dofs
    NOTIFICATION_EMAIL=your-email@example.com
@@ -184,21 +184,13 @@ curl -X POST $API_URL/order \
 3. Push to main branch to trigger deployment
 
 ### Setup AWS CodePipeline (Alternative)
-1. Store GitHub token in AWS Secrets Manager:
-   ```bash
-   aws secretsmanager create-secret \
-     --name github-token \
-     --secret-string '{"token":"your_github_personal_access_token"}' \
-     --region us-east-1
-   ```
+1. Create CodeStart Connection and add the arn in terraform script
 
 2. Deploy CI/CD infrastructure:
    ```bash
    # Update terraform.tfvars
    deploy_cicd_pipeline = true
-   github_repo_url = "https://github.com/your-username/dofs-project"
-   github_token_secret_name = "github-token"
-   
+   github_repo_url = "https://github.com/your-username/dofs-project" 
    # Apply changes
    terraform apply
    ```
