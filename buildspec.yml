@@ -20,7 +20,8 @@ phases:
     commands:
       - echo "Entered the pre_build phase..."
       - cd terraform
-      - terraform init \
+      - |
+        terraform init \
           -backend-config="bucket=$TF_STATE_BUCKET" \
           -backend-config="key=terraform.tfstate" \
           -backend-config="region=$AWS_DEFAULT_REGION" \
